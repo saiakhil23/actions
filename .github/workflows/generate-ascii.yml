@@ -16,7 +16,7 @@ jobs:
       run: cowsay -f elephant "Run for cover, I am king of Jungle" >> elephant.txt
     
     - name: Test file exist
-      run: grep -i elephant elephant.txt
+      run: grep -i "elephant" elephant.txt
     
     - name: Read File
       run: cat elephant.txt
