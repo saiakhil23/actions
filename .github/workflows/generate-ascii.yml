@@ -6,21 +6,43 @@ jobs:
   ascii_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repo 
-      uses: actions/checkout@v5
+    # - name: Checkout Repo 
+    #   uses: actions/checkout@v5
     
-    - name: Install Cowsay Program
-      run: sudo apt-get install cowsay -y
+    # - name: Install Cowsay Program
+    #   run: sudo apt-get install cowsay -y
     
-    - name: Execute cowsay CMD
-      run: cowsay -f dragon "Run for cover, I am DRAGON.....RAWR" >> elephant.txt
+    # - name: Execute cowsay CMD
+    #   run: cowsay -f dragon "Run for cover, I am DRAGON.....RAWR" >> elephant.txt
     
-    - name: Test file exist
-      run: grep -i "dragon" elephant.txt
+    # - name: Test file exist
+    #   run: grep -i "dragon" elephant.txt
     
-    - name: Read File
-      run: cat elephant.txt
+    # - name: Read File
+    #   run: cat elephant.txt
 
-    - name: List Repo Files
-      run: ls -ltra 
-      
+    # - name: List Repo Files
+    #   run: ls -ltra 
+    - name: Install Fun Tools
+      run: |
+        sudo apt-get install -y cowsay lolcat fortune
+    
+    - name: Cowsay Dragon Warning
+      run: cowsay -f dragon "🔥 Run for cover, I am DRAGON... RAWR!" | lolcat >> dragon.txt
+    
+    - name: Cowsay Tux Message
+      run: cowsay -f tux "🐧 Hello from Linux Tux in GitHub Actions!" | lolcat >> tux.txt
+    
+    - name: Random Fortune with Cow
+      run: fortune | cowsay -f cow | lolcat >> fortune.txt
+    
+    - name: Skeleton Reminder
+      run: cowsay -f skeleton "☠️ Don't forget to commit your code!" | lolcat >> skeleton.txt
+    
+    - name: Ghostbusters Easter Egg
+      run: cowsay -f ghostbusters "👻 Who you gonna call? GitHub Actions!" | lolcat >> ghostbusters.txt
+    
+    - name: Show All ASCII Files
+      run: cat *.txt
+    
+          
