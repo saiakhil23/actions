@@ -16,8 +16,8 @@ jobs:
     - name: Upload Dragon File as Artificat
       uses: actions/upload-artifact@v4
       with:
-         name: dagron-text-file
-         path: dragon.txt
+        name: dagron-text-file
+        path: dragon.txt
    
  
   test_job_2:
@@ -28,7 +28,6 @@ jobs:
       uses: actions/download-artifact@v4
       with:
          name: dagron-text-file
-         path: dragon.txt
 
     - name: Test File Exists
       run: |
@@ -44,7 +43,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
          name: dagron-text-file
-         path: dragon.txt
+         
     - name: Read File
       run: cat dragon.txt
        
