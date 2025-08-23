@@ -24,21 +24,23 @@ jobs:
     needs: build_job_1
     runs-on: ubuntu-latest
     steps:
-    - name: Upload Dragon File as Artificat
+    - name: Download Dragon text file
       uses: actions/download-artifact@v4
       with:
          name: dagron-text-file
          path: dragon.txt
 
     - name: Test File Exists
-      run: grep -i "dragon" dragon.txt
+      run: |
+        ls -ltrh
+        grep -i "dragon" dragon.txt
     
 
   deploy_job_3:
     needs: test_job_2
     runs-on: ubuntu-latest
     steps:        
-    - name: Upload Dragon File as Artificat
+    - name:  Download Dragon text file
       uses: actions/download-artifact@v4
       with:
          name: dagron-text-file
