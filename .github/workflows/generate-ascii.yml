@@ -13,7 +13,7 @@ jobs:
       run: sudo apt-get install cowsay -y
     
     - name: Execute cowsay CMD
-      run: cowsay -f elephant "Run for cover, I am king of Jungle" >> elephant.txt
+      run: cowsay -f elephant "Run for cover, I am elephant of Jungle" >> elephant.txt
     
     - name: Test file exist
       run: grep -i "elephant" elephant.txt
